@@ -60,7 +60,7 @@ _What platforms will you use to communicate?_
 
 Slack, Discord, and Remo
 
-_How often will you take breaks?
+_How often will you take breaks?_
 
 Every 1-2 hrs
 
