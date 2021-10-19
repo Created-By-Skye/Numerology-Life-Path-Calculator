@@ -64,7 +64,7 @@ Every 1-2 hrs
 
 _How will you communicate after hours and on the weekend?_
 
-Just occasionally updating our status on our tasks
+Just occasionally updating our status on our tasks via discord group chat.
 
 _What is your strategy for ensuring everyone's voice is heard?_
 
@@ -77,5 +77,7 @@ feels confortable speaking up?_
 Being respectful, understanding, kind, and relaxed.
 
 ## Work Plan
+We are going to use Trello to visualize and organize the key requirements needed to build our app, and then we will take turns writing different parts of the code. Each person will complete atleast one task and then pass the repo on to the next team member. We will use our group chat to communicate, when one person pushes their code, they can take a break and the next person will pull the code and start their turn. Also, when we trade off, we will make sure to relay any important updates and/or issues to the rest of the team.
+
 
 ## Git Process
