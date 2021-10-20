@@ -5,7 +5,9 @@ const mongoose = require("mongoose");
 const seedProfilesRouter = require("./routes/seed-profiles.js");
 const seedNumerologyRouter = require("./routes/seed-numerology.js");
 
-mongoose.connect(process.env.DATABASE_URL, {});
+const mongodb =
+  "mongodb+srv://happysolucki:WatchMyBack29@cluster0.knrt8.mongodb.net/code301?retryWrites=true&w=majority";
+mongoose.connect(mongodb, {});
 mongoose.connection.on(
   "error",
   console.error.bind(console, "MongoDB connection error:")
