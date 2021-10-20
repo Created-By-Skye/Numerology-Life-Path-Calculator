@@ -7,7 +7,7 @@ const sumDigits = (num) => {
   return sum;
 };
 
-export const lifePathNumber = (str) => {
+const lifePathNumber = (str) => {
   const dob = str.replace(/-/g, "");
   const masterNums = [11, 22, 33];
   let num = sumDigits(parseInt(dob));
@@ -19,3 +19,5 @@ export const lifePathNumber = (str) => {
 
   return num;
 };
+
+module.exports = lifePathNumber;
