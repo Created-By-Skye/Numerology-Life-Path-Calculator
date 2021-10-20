@@ -7,6 +7,8 @@ const Profile = new Schema({
   birthDay: Number,
   birthYear: Number,
   gender: String,
+  lifePath: Number,
+  zodiacSign: String,
 });
 
 module.exports = mongoose.model("numerologyprofiles", Profile);
