@@ -11,7 +11,6 @@ const lifePathNumber = (str) => {
   const dob = str.replace(/-/g, "");
   const masterNums = [11, 22, 33];
   let num = sumDigits(parseInt(dob));
-  console.log(num);
 
   while (num.toString().length > 1 && masterNums.indexOf(num) < 0) {
     num = sumDigits(num);
