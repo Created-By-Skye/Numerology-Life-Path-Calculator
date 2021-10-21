@@ -1,11 +1,13 @@
 import React from 'react';
-import { Jumbotron, Container } from 'reactstrap';
+import { Jumbotron, Container, Button } from 'reactstrap';
 import './Home.css';
-import SignupButton from './SignupButton'
+import { useAuth0 } from '@auth0/auth0-react';
+
 
 const Home = () => {
+  const { loginWithRedirect } = useAuth0();
 return (
-  
+
 <div id="wrapper">
 <Container fluid id="container">
 <Jumbotron fluid id="jumbo">
@@ -13,9 +15,9 @@ return (
         <br />
         <br />
         <br />
-          <h2 className="lead">Click below to find your path!</h2>
+        
           <br />
-       <SignupButton />
+      <Button onClick={() => loginWithRedirect()}>Get My Life Path Number!</Button>
       </Jumbotron>
       </Container>
 

@@ -7,24 +7,25 @@ import Profiles from './components/Profiles';
 import Header from './components/Header';
 import LifePaths from './components/LifePaths';
 import About from './components/About';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
 
-  
+  const { isAuthenticated } = useAuth0();
   return (
     <div className="App">
   
-    <Header />
-
+    {isAuthenticated} ? {CreateProfile} : {Home}
     <Router>
+    <Header />
     <Switch>
   <Route path="/CreateProfile" component={CreateProfile}/>
-    <Route path="/Profiles" component={Profiles}/> 
     <Route path="/About" component={About}/> 
-    <Route path="/Profiles" component={LifePaths}/> 
+    <Route path="/LifePaths" component={LifePaths}/> 
+    <Route path="/Profiles" component={Profiles}/> 
+    <Route path="/" component={Home}/> 
     </Switch>
-      <Route path="/" component={Home}/> 
-</Router>
+    </Router>
             
     </div>
   );
