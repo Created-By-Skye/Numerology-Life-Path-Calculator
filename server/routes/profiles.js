@@ -6,7 +6,7 @@ const ProfileCollection = require("../models/ProfileSchema.js");
 
 // create
 router.post("/", (req, res) => {
-  let { name, birthMonth, birthDay, birthYear, gender } = req.query;
+  let { name, birthMonth, birthDay, birthYear, gender, email } = req.query;
 
   birthMonth = Number(birthMonth);
   birthDay = Number(birthDay);
@@ -26,6 +26,7 @@ router.post("/", (req, res) => {
     gender,
     lifePath,
     zodiacSign,
+    email,
   };
 
   ProfileCollection.create(newProfile, (err, results) => {
@@ -33,17 +34,19 @@ router.post("/", (req, res) => {
   });
 });
 
-// delete
-router.delete("/:id", (req, res) => {
-  ProfileCollection.findByIdAndDelete(req.params.id, (err, results) => {
-    err ? res.send(err) : res.send(results);
-  });
-});
 
 // +1 get all
 router.get("/", (_, res) => {
   ProfileCollection.find({}, (err, results) => {
     err ? res.send(err) : res.send(results);
+  });
+});
+
+// +1 get all for particular user
+router.get("/user", (req, res) => {
+  const { email } = req.query;
+  ProfileCollection.find({ email }, (err, results) => {
+    err ? res.send(err) : res.send(results)
   });
 });
 
