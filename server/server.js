@@ -4,7 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const seedProfilesRouter = require("./routes/seed-profiles.js");
 const seedNumerologyRouter = require("./routes/seed-numerology.js");
-const profileRouter = require("./routes/profiles.js");
+const profileRouter = require("./routes/profile.js");
 const profilesRouter = require("./routes/profiles.js");
 
 // set up mongodb connection
