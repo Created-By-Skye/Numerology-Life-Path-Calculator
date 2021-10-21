@@ -19,24 +19,7 @@ return (
           placeholder="with a placeholder"
         />
       </FormGroup>
-      <FormGroup>
-        <Label for="examplePassword">Password</Label>
-        <Input
-          type="password"
-          name="password"
-          id="examplePassword"
-          placeholder="password placeholder"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleUrl">Url</Label>
-        <Input
-          type="url"
-          name="url"
-          id="exampleUrl"
-          placeholder="url placeholder"
-        />
-      </FormGroup>
+     
       <FormGroup>
         <Label for="exampleNumber">Number</Label>
         <Input
