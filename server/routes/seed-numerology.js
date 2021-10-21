@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const lifePathModel = require("../models/LifePathSchema");
 
-router.get("/", (_, res) => {
+router.post("/", (_, res) => {
   const lifePaths = [
     new lifePathModel({
       pathNumber: 1,
