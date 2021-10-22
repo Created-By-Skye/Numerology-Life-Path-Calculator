@@ -31,10 +31,10 @@ const ProfileForm = () => {
 
   return (
     <Form style={{ backgroundColor: "red", textAlign: "left" }}>
-      <FormGroup>
+      {/* <FormGroup>
         <Label for="exampleEmail">Plain Text (Static)</Label>
         <Input plaintext value="Some plain text/ static value" />
-      </FormGroup>
+      </FormGroup> */}
       <FormGroup>
         <Label for="profileName">Name</Label>
         <Input
