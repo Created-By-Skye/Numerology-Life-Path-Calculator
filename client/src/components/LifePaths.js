@@ -30,7 +30,7 @@ const LifePaths = () => {
 
   return (
     <>
-      <h1>Life Paths</h1>
+      <h1 style={{ color: "#fff" }}>Life Paths</h1>
       <div>
         {lifePaths.map((path, idx) => (
           <LifePath
