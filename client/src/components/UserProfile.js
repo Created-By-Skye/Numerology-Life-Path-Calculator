@@ -70,7 +70,7 @@ const UserProfile = ({
                 />
               ))
             ) : (
-              <h3>No other profiles</h3>
+              <h3 style={{color: '#fff'}}>No other profiles</h3>
             )}
           </div>
         </div>
