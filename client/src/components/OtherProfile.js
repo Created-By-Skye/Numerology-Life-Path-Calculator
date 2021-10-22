@@ -175,10 +175,10 @@ const OtherProfile = ({
             Close
           </Button>
           <Button
-            variant="primary"
+            variant="warning"
             onClick={() => handleUserProfileEdit(updatedProfile, id)}
           >
-            Add
+            Edit
           </Button>
         </Modal.Footer>
       </Modal>
