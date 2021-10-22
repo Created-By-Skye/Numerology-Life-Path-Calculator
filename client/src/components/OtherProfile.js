@@ -7,9 +7,9 @@ const OtherProfile = ({
   profile,
   handleProfileDelete,
   handleUserProfileEdit,
-  showEdit,
-  handleCloseEdit,
-  handleShowEdit,
+  // showEdit,
+  // handleCloseEdit,
+  // handleShowEdit,
 }) => {
   const {
     name,
@@ -34,6 +34,15 @@ const OtherProfile = ({
     email,
   });
 
+  const [showEdit, setShowEdit] = useState(false);
+
+  const handleCloseEdit = () => setShowEdit(false);
+  const handleShowEdit = () => setShowEdit(true);
+
+  const handleEditAndClose = (profile, id) => {
+    handleUserProfileEdit(profile, id);
+    handleCloseEdit();
+  };
   // const handleProfileDelete = async (userEmail, profileId) => {
   //   await axios.delete(`http://localhost:3001/profile/${profileId}`, {
   //     params: {
@@ -42,7 +51,6 @@ const OtherProfile = ({
   //   });
   // };
 
-  // FIXME: Modal only fills data from last profile
   return (
     <>
       <div
@@ -176,7 +184,7 @@ const OtherProfile = ({
           </Button>
           <Button
             variant="warning"
-            onClick={() => handleUserProfileEdit(updatedProfile, id)}
+            onClick={() => handleEditAndClose(updatedProfile, id)}
           >
             Edit
           </Button>
