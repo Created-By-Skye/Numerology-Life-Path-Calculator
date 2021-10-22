@@ -30,12 +30,13 @@ const ProfileForm = () => {
   };
 
   return (
-    <Form style={{ backgroundColor: "red", textAlign: "left" }}>
+    <Form style={{ backgroundColor: "#fff", textAlign: "left", margin: '2em 4em', padding: '1.5em 3em', borderRadius: '10px' }}>
       {/* <FormGroup>
         <Label for="exampleEmail">Plain Text (Static)</Label>
         <Input plaintext value="Some plain text/ static value" />
       </FormGroup> */}
-      <FormGroup>
+      <h1 style={{textAlign: 'center'}}>Create First Profile</h1>
+      <FormGroup style={{marginBottom: '10px'}}>
         <Label for="profileName">Name</Label>
         <Input
           type="text"
@@ -46,7 +47,7 @@ const ProfileForm = () => {
           placeholder="Your Name"
         />
       </FormGroup>
-      <FormGroup>
+      <FormGroup style={{marginBottom: '10px'}}>
         <Label for="profileGender">Gender</Label>
         <Input
           type="text"
@@ -57,7 +58,7 @@ const ProfileForm = () => {
           placeholder="Male, Female, Non-Binary, Other"
         />
       </FormGroup>
-      <FormGroup>
+      <FormGroup style={{marginBottom: '10px'}}>
         <Label for="profileBirthMonth">Birth Month (Enter as number)</Label>
         <Input
           type="number"
@@ -68,7 +69,7 @@ const ProfileForm = () => {
           placeholder="7"
         />
       </FormGroup>
-      <FormGroup>
+      <FormGroup style={{marginBottom: '10px'}}>
         <Label for="profileBirthDay">Birth Date (Enter as number)</Label>
         <Input
           type="number"
@@ -79,7 +80,7 @@ const ProfileForm = () => {
           placeholder="21"
         />
       </FormGroup>
-      <FormGroup>
+      <FormGroup style={{marginBottom: '10px'}}>
         <Label for="profileBirthYear">Birth Year (Enter as number)</Label>
         <Input
           type="number"
