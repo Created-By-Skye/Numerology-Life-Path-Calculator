@@ -1,16 +1,96 @@
-import React from 'react';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
+import { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Form, FormGroup, Label, Input, FormText, Button } from "reactstrap";
+import axios from "axios";
 
 const ProfileForm = () => {
+  const {
+    user: { email },
+  } = useAuth0();
 
-return (
-    <Form>
+  const [currentName, setCurrentName] = useState("");
+  const [currentGender, setCurrentGender] = useState("");
+  const [currentBirthMonth, setCurrentBirthMonth] = useState("");
+  const [currentBirthDay, setCurrentBirthDay] = useState("");
+  const [currentBirthYear, setCurrentBirthYear] = useState("");
+
+  const handleFormSubmit = async () => {
+    try {
+      await axios.post("http://localhost:3001/profiles", {
+        name: currentName,
+        birthMonth: Number(currentBirthMonth),
+        birthDay: Number(currentBirthDay),
+        birthYear: Number(currentBirthYear),
+        gender: currentGender,
+        email,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <Form style={{ backgroundColor: "red", textAlign: "left" }}>
       <FormGroup>
         <Label for="exampleEmail">Plain Text (Static)</Label>
         <Input plaintext value="Some plain text/ static value" />
       </FormGroup>
       <FormGroup>
+        <Label for="profileName">Name</Label>
+        <Input
+          type="text"
+          name="profileName"
+          id="profileName"
+          value={currentName}
+          onChange={(e) => setCurrentName(e.target.value)}
+          placeholder="Your Name"
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="profileGender">Gender</Label>
+        <Input
+          type="text"
+          name="profileGender"
+          id="profileGender"
+          value={currentGender}
+          onChange={(e) => setCurrentGender(e.target.value)}
+          placeholder="Male, Female, Non-Binary, Other"
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="profileBirthMonth">Birth Month (Enter as number)</Label>
+        <Input
+          type="number"
+          name="profileBirthMonth"
+          id="profileBirthMonth"
+          value={currentBirthMonth}
+          onChange={(e) => setCurrentBirthMonth(e.target.value)}
+          placeholder="7"
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="profileBirthDay">Birth Date (Enter as number)</Label>
+        <Input
+          type="number"
+          name="profileBirthDay"
+          id="profileBirthDay"
+          value={currentBirthDay}
+          onChange={(e) => setCurrentBirthDay(e.target.value)}
+          placeholder="21"
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="profileBirthYear">Birth Year (Enter as number)</Label>
+        <Input
+          type="number"
+          name="profileBirthYear"
+          id="profileBirthYear"
+          value={currentBirthYear}
+          onChange={(e) => setCurrentBirthYear(e.target.value)}
+          placeholder="1998"
+        />
+      </FormGroup>
+      {/* <FormGroup>
         <Label for="exampleEmail">Email</Label>
         <Input
           type="email"
@@ -19,7 +99,7 @@ return (
           placeholder="with a placeholder"
         />
       </FormGroup>
-     
+
       <FormGroup>
         <Label for="exampleNumber">Number</Label>
         <Input
@@ -98,8 +178,8 @@ return (
           <option>4</option>
           <option>5</option>
         </Input>
-      </FormGroup>
-      <FormGroup>
+      </FormGroup> */}
+      {/* <FormGroup>
         <Label for="exampleText">Text Area</Label>
         <Input type="textarea" name="text" id="exampleText" />
       </FormGroup>
@@ -117,18 +197,18 @@ return (
       </FormGroup>
       <FormGroup check>
         <Label check>
-          <Input type="radio" /> Option one is this and that—be sure to
-          include why it's great
+          <Input type="radio" /> Option one is this and that—be sure to include
+          why it's great
         </Label>
       </FormGroup>
       <FormGroup check>
         <Label check>
           <Input type="checkbox" /> Check me out
         </Label>
-      </FormGroup>
+      </FormGroup> */}
+      <Button onClick={handleFormSubmit}>Submit</Button>
     </Form>
   );
-}
-  
+};
 
-export default ProfileForm
+export default ProfileForm;
