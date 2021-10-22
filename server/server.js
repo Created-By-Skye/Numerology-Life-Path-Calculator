@@ -6,6 +6,7 @@ const seedProfilesRouter = require("./routes/seed-profiles.js");
 const seedNumerologyRouter = require("./routes/seed-numerology.js");
 const profileRouter = require("./routes/profile.js");
 const profilesRouter = require("./routes/profiles.js");
+const numerologyRouter = require("./routes/numerology.js");
 
 // set up mongodb connection
 const mongoDB =
@@ -38,6 +39,7 @@ app.use("/seed/numerology", seedNumerologyRouter);
 // set endpoint for app functionality
 app.use("/profile", profileRouter);
 app.use("/profiles", profilesRouter);
+app.use("/numerology", numerologyRouter);
 
 // set up express server listening
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
