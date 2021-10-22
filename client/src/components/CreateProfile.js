@@ -1,11 +1,12 @@
 import ProfileForm from './ProfileForm'
 
-const CreateProfile = () => {
-   
+
+
+function CreateProfile()  {
+  
 
 return (
 <ProfileForm/>
-
 
 )
 

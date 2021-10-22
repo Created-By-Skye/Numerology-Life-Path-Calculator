@@ -1,131 +1,98 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Form, Label, FormGroup, Input } from 'reactstrap';
+
+import { Button } from 'react-bootstrap';
 
 
-const ProfileForm = () => {
 
+const ProfileForm =() => {
+  
+  
 return (
-    <Form>
+    <Form style={{
+      backgroundColor: 'white',
+      textAlign: 'left',
+      width: '500px',
+      height: '600px',
+      position: 'relative',
+      left: '200px',
+      top: '40px',
+      padding: '10px 10px 10px 10px',
+      margin: '20px 20px 20px 20px'
+    }}>
       <FormGroup>
-        <Label for="exampleEmail">Plain Text (Static)</Label>
-        <Input plaintext value="Some plain text/ static value" />
+
+        <Label htmlFor="profileForm"><h1>Your Numerology Profile</h1></Label>
+        
       </FormGroup>
       <FormGroup>
-        <Label for="exampleEmail">Email</Label>
-        <Input
+        <Label htmlFor="firstAndLastName">Email Address</Label>
+      <Input 
           type="email"
           name="email"
-          id="exampleEmail"
-          placeholder="with a placeholder"
-        />
+          id="email"
+         />
+        
       </FormGroup>
      
       <FormGroup>
-        <Label for="exampleNumber">Number</Label>
-        <Input
-          type="number"
-          name="number"
-          id="exampleNumber"
-          placeholder="number placeholder"
-        />
+        <Label htmlFor="fullName">Full Name</Label>
+      <Input 
+          type="text"
+          name="fullName"
+          id="fullName"
+         />
+        
+        
       </FormGroup>
+      
       <FormGroup>
-        <Label for="exampleDatetime">Datetime</Label>
-        <Input
-          type="datetime"
-          name="datetime"
-          id="exampleDatetime"
-          placeholder="datetime placeholder"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleDate">Date</Label>
+        <Label htmlFor="birthDate">Birth Date</Label>
         <Input
           type="date"
-          name="date"
-          id="exampleDate"
-          placeholder="date placeholder"
-        />
+          name="birthDate"
+          id="birthDate"
+          />
+        
       </FormGroup>
+      
+     
       <FormGroup>
-        <Label for="exampleTime">Time</Label>
-        <Input
-          type="time"
-          name="time"
-          id="exampleTime"
-          placeholder="time placeholder"
-        />
+        <Label htmlFor="gender">Gender</Label>
+      <Input type="select" name="gender" id="gender" >
+       
+          <option> </option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+          <option>Prefer Not To Say</option>
+      </Input>
       </FormGroup>
+
       <FormGroup>
-        <Label for="exampleColor">Color</Label>
+        <Label htmlFor="colorPicker">Color</Label>
         <Input
           type="color"
-          name="color"
-          id="exampleColor"
+          name="colorPicker"
+          id="colorPicker"
           placeholder="color placeholder"
+          style={{height: '50px'}}
+          
         />
       </FormGroup>
-      <FormGroup>
-        <Label for="exampleSearch">Search</Label>
-        <Input
-          type="search"
-          name="search"
-          id="exampleSearch"
-          placeholder="search placeholder"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleSelect">Select</Label>
-        <Input type="select" name="select" id="exampleSelect">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </Input>
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleSelectMulti">Select Multiple</Label>
-        <Input
-          type="select"
-          name="selectMulti"
-          id="exampleSelectMulti"
-          multiple
-        >
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </Input>
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleText">Text Area</Label>
-        <Input type="textarea" name="text" id="exampleText" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleFile">File</Label>
-        <Input type="file" name="file" id="exampleFile" />
-        <FormText color="muted">
-          This is some placeholder block-level help text for the above input.
-          It's a bit lighter and easily wraps to a new line.
-        </FormText>
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleRange">Range</Label>
-        <Input type="range" name="range" id="exampleRange" />
-      </FormGroup>
-      <FormGroup check>
-        <Label check>
-          <Input type="radio" /> Option one is this and that—be sure to
-          include why it's great
-        </Label>
-      </FormGroup>
-      <FormGroup check>
-        <Label check>
-          <Input type="checkbox" /> Check me out
-        </Label>
-      </FormGroup>
+    
+       
+     <Button
+          type="submit"
+          name="submit"
+          id="b" >
+         
+      Submit
+          
+        </Button>
+    
+
+     
     </Form>
   );
 }
